@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+    <setting>
+        <name>addressServer</name>
+        <value>192.168.1.31</value>
+    </setting>
+    <setting>
+        <name>portServer</name>
+        <value>5555</value>
+    </setting>
+    <setting>
+        <name>retryTime</name>
+        <value>1000</value>
+    </setting>
+    <setting>
+        <name>typeStorage</name>
+        <value>DB</value>
+    </setting>
+    <setting>
+        <name>dbType</name>
+        <value>MYSQL</value>
+    </setting>
+    <setting>
+        <name>dbAddress</name>
+        <value>192.168.1.31</value>
+    </setting>
+    <setting>
+        <name>dbUser</name>
+        <value>anton</value>
+    </setting>
+    <setting>
+        <name>dbPassword</name>
+        <value>10</value>
+    </setting>
+</settings>

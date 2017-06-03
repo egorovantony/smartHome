@@ -1,0 +1,19 @@
+>>(1)-- Delete all rows from sensorHistory table --
+DELETE FROM `modbus`.`sensorHistory`;
+<<----------------------------------------------------------------------------
+
+>>(2)-- Delete all rows from sensor table --
+DELETE FROM `modbus`.`sensor`;
+<<----------------------------------------------------------------------------
+
+>>(3)-- Delete all rows from controller table --
+DELETE FROM `modbus`.`controller`;
+<<----------------------------------------------------------------------------
+
+>>(4)-- Delete all rows from tySensor table --
+DELETE FROM `modbus`.`tySensor`;
+<<----------------------------------------------------------------------------
+
+>>(5)-- Delete all rows from tyWriteSensor table --
+DELETE FROM `modbus`.`tyWriteSensor`;
+<<----------------------------------------------------------------------------

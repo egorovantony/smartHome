@@ -1,0 +1,64 @@
+>>(1)--Database create--
+CREATE DATABASE `modbus_test` DEFAULT CHARACTER SET utf8
+<<----------------------------------------------------------------------------
+
+>>(2)--Create tySensor table--
+CREATE TABLE `modbus_test`.`tySensor` (
+  `ID` varchar(10) NOT NULL,
+  `Name` varchar(45) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+<<----------------------------------------------------------------------------
+
+>>(3)--Create tyWriteSensor table--
+CREATE TABLE `modbus_test`.`tyWriteSensor` (
+  `ID` varchar(10) NOT NULL,
+  `Name` varchar(45) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+<<----------------------------------------------------------------------------
+
+>>(4)--Create controller table--
+CREATE TABLE `modbus_test`.`controller` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(60) NOT NULL,
+  `IPv4` varchar(20) NOT NULL,
+  `Port` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8
+<<----------------------------------------------------------------------------
+
+>>(5)--Create sensor table--
+CREATE TABLE `modbus_test`.`sensor` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `IDContr` int(11) NOT NULL,
+  `Type` varchar(10) NOT NULL,
+  `TypeWrite` varchar(10) NOT NULL,
+  `MinValue` int(11) DEFAULT '0',
+  `MaxValue` int(11) DEFAULT '1',
+  `Working` tinyint(1) NOT NULL DEFAULT '0',
+  `ContrOrder` int(11) NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `fk_sensor_3_idx` (`IDContr`),
+  KEY `fk_sensor_1_idx` (`Type`),
+  KEY `fk_sensor_2_idx` (`TypeWrite`),
+  CONSTRAINT `fk_sensor_1` FOREIGN KEY (`Type`) REFERENCES `modbus_test`.`tySensor` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_sensor_2` FOREIGN KEY (`TypeWrite`) REFERENCES `modbus_test`.`tyWriteSensor` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_sensor_3` FOREIGN KEY (`IDContr`) REFERENCES `modbus_test`.`controller` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8
+<<----------------------------------------------------------------------------
+
+>>(6)--Create sensorHistory table--
+CREATE TABLE `modbus_test`.`sensorHistory` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `IDSensor` int(11) NOT NULL,
+  `dateTime` datetime NOT NULL,
+  `diValue` tinyint(1) DEFAULT '0',
+  `regValue` int(11) DEFAULT '0',
+  `error` tinyint(1) DEFAULT '0',
+  `txtError` varchar(150) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `fk_sensorHistory_1_idx` (`IDSensor`),
+  CONSTRAINT `fk_sensorHistory_1` FOREIGN KEY (`IDSensor`) REFERENCES `modbus_test`.`sensor` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8
+<<----------------------------------------------------------------------------

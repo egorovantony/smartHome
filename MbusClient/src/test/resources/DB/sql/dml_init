@@ -1,0 +1,20 @@
+>>(1)-- Insert rows to tySensor table --
+INSERT INTO `modbus_test`.`tySensor` (`ID`, `Name`) VALUES ('DISCRETE', 'Discrete');
+<<----------------------------------------------------------------------------
+
+>>(2)-- Insert rows to tyWriteSensor table --
+INSERT INTO `modbus_test`.`tyWriteSensor` (`ID`, `Name`) VALUES ('INPUT', 'Input');
+<<----------------------------------------------------------------------------
+
+>>(3)-- Insert rows to controller table --
+INSERT INTO `modbus_test`.`controller` (`Name`, `IPv4`, `Port`) VALUES ('Base controller', '192.168.1.31', '5555');
+<<----------------------------------------------------------------------------
+
+>>(4)-- Insert rows to sensor table --
+INSERT INTO `modbus_test`.`sensor` (`ID`, `IDContr`, `Type`, `TypeWrite`, `MinValue`, `MaxValue`, `Working`, `ContrOrder`)
+VALUES ('1', '2', 'DISCRETE', 'INPUT', '0', '1', '1', '1');
+<<----------------------------------------------------------------------------
+>>(4)-- Insert rows to sensorHistory table --
+INSERT INTO `modbus_test`.`sensorHistory` (`IDSensor`, `dateTime`, `diValue`, `regValue`) VALUES ('1', '2012.12.12', '0', '0');
+<<----------------------------------------------------------------------------
+

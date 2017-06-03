@@ -1,0 +1,4 @@
+>>(1)-- Insert rows to tySensor table --
+INSERT INTO `modbus_test`.`tySensor` (`ID`, `Name`) VALUES ('NEW', 'New';
+<<----------------------------------------------------------------------------
+

@@ -1,0 +1,25 @@
+>>(1)-- Insert rows to tySensor table --
+INSERT INTO `modbus`.`tySensor` (`ID`, `Name`) VALUES ('DISCRETE', 'Discrete');
+INSERT INTO `modbus`.`tySensor` (`ID`, `Name`) VALUES ('REGISTER', 'Register');
+<<----------------------------------------------------------------------------
+
+>>(2)-- Insert rows to tyWriteSensor table --
+INSERT INTO `modbus`.`tyWriteSensor` (`ID`, `Name`) VALUES ('INPUT', 'Input');
+INSERT INTO `modbus`.`tyWriteSensor` (`ID`, `Name`) VALUES ('OUTPUT', 'Output');
+<<----------------------------------------------------------------------------
+
+>>(3)-- Insert rows to controller table --
+INSERT INTO `modbus`.`controller` (`Name`, `IPv4`, `Port`) VALUES ('Base controller', '192.168.1.31', '5555');
+<<----------------------------------------------------------------------------
+
+>>(4)-- Insert rows to sensor table --
+INSERT INTO `modbus`.`sensor` (`IDContr`, `Type`, `TypeWrite`, `MinValue`, `MaxValue`, `Working`, `ContrOrder`)
+VALUES ('2', 'DISCRETE', 'INPUT', '0', '1', '1', '1');
+INSERT INTO `modbus`.`sensor` (`IDContr`, `Type`, `TypeWrite`, `MinValue`, `MaxValue`, `Working`, `ContrOrder`)
+VALUES ('2', 'DISCRETE', 'INPUT', '0', '1', '1', '2');
+INSERT INTO `modbus`.`sensor` (`IDContr`, `Type`, `TypeWrite`, `MinValue`, `MaxValue`, `Working`, `ContrOrder`)
+VALUES ('2', 'REGISTER', 'INPUT', '0', '1', '1', '1');
+INSERT INTO `modbus`.`sensor` (`IDContr`, `Type`, `TypeWrite`, `MinValue`, `MaxValue`, `Working`, `ContrOrder`)
+VALUES ('2', 'REGISTER', 'INPUT', '0', '1', '1', '2');
+<<----------------------------------------------------------------------------
+

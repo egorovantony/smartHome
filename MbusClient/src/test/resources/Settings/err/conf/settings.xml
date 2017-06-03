@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><settings>
+    <setting>
+        <name>addressServer</name>
+        <value>192.168.1.35</value>
+    </setting>
+    <setting>
+        <name>portServer</name>
+        <value>7777</value>
+    </setting>
+    <setting>
+        <name>retryTime</name>
+        <value>105</value>
+    </setting>
+    <setting>
+        <name>typeStorage</name>
+        <value>DB</value>
+    </setting>
+    <setting>
+        <name>dbType</name>
+        <value>PostgreSQL</value>
+    </setting>
+    <setting>
+        <name>dbAddress</name>
+        <value>192.168.1.105</value>
+    </setting>
+    <setting>
+        <name>dbUser</name>
+        <value>ivan</value>
+    </setting>
+    <setting>
+        <name>dbPassword</name>
+        <value/>
+    </setting>
+</settings>
